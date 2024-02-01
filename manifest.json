@@ -1,0 +1,20 @@
+{
+  "manifest_version": 2,
+  "name": "TOTKGuessr",
+  "version": "1.1",
+  "description": "TOTKguessr extension for HyruleGuessr",
+  "permissions": [
+    "webRequest",
+    "https://hyruleguessr.com/*",
+    "webRequestBlocking"
+  ],
+  "background": {
+    "scripts": ["totk.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://hyruleguessr.com/*"],
+      "js": ["page-modifier.js"]
+    }
+  ]
+}
