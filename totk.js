@@ -16,7 +16,7 @@ const replaceImages = async (e) => {
 // }
 
 
-const lul = async (e) => {
+const refreshTotk = async (e) => {
   browser.tabs.executeScript(e.tabId, { code: `localStorage['totk']` })
     .then((s) => {
       if (s[0] == "true"){
@@ -44,7 +44,7 @@ browser.webRequest.onBeforeRequest.addListener(
 // );
 
 browser.webRequest.onBeforeRequest.addListener(
-  lul,
+  refreshTotk,
   {urls: ["https://hyruleguessr.com/", "https://hyruleguessr.com/game/*", "https://hyruleguessr.com/challenges*", "https://hyruleguessr.com/ranked*", "https://hyruleguessr.com/profile*", "https://hyruleguessr.com/about*", "https://hyruleguessr.com/api/Games/*"]},
   ["blocking"]
 );
