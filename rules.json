@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "priority": 1,
+    "action": { "type": "redirect", "redirect": { 
+        "transform": { "scheme": "https", "host": "totk.flemmy.fr" }
+      } 
+    },
+    "condition": { "urlFilter": "hyruleguessr.com/screenshots/", "resourceTypes": ["image", "main_frame"] }
+  }, {
+    "id": 2,
+    "priority": 1,
+    "action": { "type": "redirect", "redirect": { 
+        "transform": { "scheme": "https", "host": "totk.flemmy.fr" }
+      }
+    },
+    "condition": { "urlFilter": "hyruleguessr.com/tiles/", "resourceTypes": ["image", "main_frame"] }
+  }, {
+    "id": 3,
+    "priority": 2,
+    "action": { "type": "allow" },
+    "condition": { "regexFilter": "screenshots.*redirect=false", "resourceTypes": ["image", "main_frame"] }
+  }, {
+    "id": 4,
+    "priority": 2,
+    "action": { "type": "allow" },
+    "condition": { "regexFilter": "tiles.*redirect=false", "resourceTypes": ["image", "main_frame"] }
+  }
+]
